@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 80vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .Yes,
+        .No {
+            background-color: burlywood;
+            padding: 12px;
+            position: absolute;
+            width: 60px;
+            height: 40px;
+        }
+
+        .Yes {
+            top: 28vw;
+            right: 730px;
+        }
+
+        .No {
+            top: 28vw;
+            right: 650px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .Yes {
+                top: 80%;
+                right: 250px;
+                
+            } 
+
+            .No {
+                top: 80%;
+                right: 150px;
+            }
+        }
+    </style>
+    <script>
+        function moveButton() {
+            let no = document.querySelector('.No');
+            let top = Math.floor(Math.random() * window.innerHeight);
+            let bottom = Math.min(Math.floor(Math.random() * window.innerWidth), window.innerWidth);
+            no.style.left = bottom + 'px';
+            no.style.top = top + 'px';
+        }
+
+        function yes() {
+            alert('I love you too');
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Do You Love Me????</h1>
+    </div>
+    <button class="Yes" onclick="yes()">Yes</button>
+    <button class="No" onclick="moveButton()">No</button>
+</body>
+
+</html>
